@@ -5,7 +5,7 @@ var map = new mapboxgl.Map(
   // container id specified in the HTML
   container: 'map',
   // style URL
-  style: 'mapbox://styles/mapbox/light-v9',
+  style: 'mapbox://styles/afsara/civnxtmj2003s2joio1i1tid5',
   // initial position in [long, lat] format
   center: [0.005353, 51.501597],
   // initial zoom
@@ -22,10 +22,14 @@ function wipeMarkers()
     marker.remove()
   }
 }
-function addMarkers(dataList) 
+
+
+// add a variable to check if we want to wipe the existing markers, or keep them
+function addMarkers(dataList, wipe, className) 
 {
   // first wipe previous markers
-  wipeMarkers()
+  if (wipe) wipeMarkers()
+  
   // then add new ones
   for (var i = 0; i < dataList.length; i++) 
   {
@@ -36,7 +40,7 @@ function addMarkers(dataList)
     // create a div element for the marker
     var div = document.createElement('div')
     // add a class called 'marker' to the div
-    div.className = 'marker'
+    div.className = 'marker ' +  className
     // create the custom marker
     var marker = new mapboxgl.Marker(div)
       .setLngLat(coordinates) // set the marker position

@@ -2,7 +2,7 @@ console.log("geolocate.js ready to roll!")
 
 if (navigator.geolocation) //if gEOLOCATION IS SUPPORTED BY YOUR BROWSER
 {
-    navigator.geolocation.getCurrentPosition(showPosition)
+    navigator.geolocation.watchPosition(showPosition)
 }
 
 var userMarker = null //user marker 

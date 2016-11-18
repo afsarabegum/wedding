@@ -22,7 +22,20 @@ var venuesList=[];
 // keep listneing for new children
 venuesData.on('child_added', function(childData){
     //run these instructions for each child
-    console.table( childData.val() );
-    var person = childData.val(); //extract data about the person
+    // console.table( childData.val() );
     venuesList.push( childData.val()); //add the person to the people list
+    
+})
+//we want to grabopnly the "services" part of the database
+var servicesData = database.ref('services');
+
+//create a list of people
+var servicesList=[];
+
+//load all the children of "people"
+// keep listneing for new children
+servicesData.on('child_added', function(childData){
+    //run these instructions for each child
+    // console.table( childData.val() );
+    servicesList.push( childData.val()); //add the person to the people list
 })

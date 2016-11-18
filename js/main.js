@@ -5,6 +5,7 @@ var HomeSection = $('#home')
 var ResultsSection = $('#results')
 var resultsOL = $('#results ol')
 var resultsToggleButton = $('#results .toggle')
+var resultsServicesButton = $('#results .services')
 var resultsMap = $('#map')
 var ResultsBackButton = $('#results .back')
 var detailsSection = $('#details')
@@ -12,21 +13,23 @@ var detailsInfo = $('#details #info')
 var detailsBackButton = $('#details .back')
 
 
+var chosenArea = null // empty at the beginning
+
 //tell the button to do somehting when clicked
 HomeButtonGo.click(function(){
     
 
     // 1. capture the chosen user option
-    var chosenOption = HomeDropdown.val()
-    console.log("You picked " + chosenOption)
+    chosenArea = HomeDropdown.val()
+    console.log("You picked " + chosenArea)
     
-    // 2. filter+sort people by user selection
-    var resultsList = filterAndSortList(venuesList, "Area", chosenOption);
+    // 2. filter+sort venues by chosenArea
+    var resultsList = filterAndSortList(venuesList, "Area", chosenArea);
     console.log(resultsList);
     
     // 3. show the results in the #results section
     showList(resultsList, resultsOL);
-    addMarkers(resultsList)
+    addMarkers(resultsList, true, 'venue')
     
     // 4. what happens when you click a result?
     $('#results li').click( function() {
@@ -84,4 +87,16 @@ resultsToggleButton.click( function(){
             resultsMap.hide()
         }
 
+})
+
+resultsServicesButton.click( function()
+{
+    console.log('clicked resultsServicesButton')
+    
+    // filter+sort services by chosenArea
+    var resultsList = filterAndSortList(servicesList, "Area", chosenArea);
+    
+    console.log(resultsList);
+    
+    addMarkers(resultsList, false, 'service')
 })
