@@ -1,2 +1,0 @@
-# wedding
-wedding venue app
