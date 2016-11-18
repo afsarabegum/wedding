@@ -12,17 +12,17 @@ console.log("firebase.js ready to roll!")
 //this is the whole database
 var database = firebase.database();
 
-//we want to grabopnly the "people" part of the database
-var peopleData = database.ref('people');
+//we want to grabopnly the "venues" part of the database
+var venuesData = database.ref('venues');
 
 //create a list of people
-var peopleList=[];
+var venuesList=[];
 
 //load all the children of "people"
 // keep listneing for new children
-peopleData.on('child_added', function(childData){
+venuesData.on('child_added', function(childData){
     //run these instructions for each child
     console.table( childData.val() );
     var person = childData.val(); //extract data about the person
-    peopleList.push( childData.val()); //add the person to the people list
+    venuesList.push( childData.val()); //add the person to the people list
 })
