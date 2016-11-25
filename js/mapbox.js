@@ -47,5 +47,15 @@ function addMarkers(dataList, wipe, className)
       .addTo(map) // add the marker to map
     // add the marker to the list
     markers.push(marker)  
+    
+    //set popup
+    //1. update the details section
+    //2.hide the results section
+    //3.show the details section
+    var clickSteps = 'showDetails(resultsList['+i+'], detailsInfo); resultsSection.hide(); detailsSection.show();'
+var popupHTML = '<a onclick="' + clickSteps + '">' + dataItem.name + '</a>'
+var popup = new mapboxgl.Popup({closeButton:false})
+popup.setHTML(popupHTML)
+marker.setPopup(popup)
   }
 }

@@ -1,8 +1,9 @@
 // use jQuery to select the HMTL element we're going to manipulate
 var HomeButtonGo = $('#home button')
-var HomeDropdown = $('#home select')
+var areaDropdown = $('#area')
+var priceDropdown = $('#price')
 var HomeSection = $('#home')
-var ResultsSection = $('#results')
+var resultsSection = $('#results')
 var resultsOL = $('#results ol')
 var resultsToggleButton = $('#results .toggle')
 var resultsServicesButton = $('#results .services')
@@ -13,18 +14,32 @@ var detailsInfo = $('#details #info')
 var detailsBackButton = $('#details .back')
 
 
-var chosenArea = null // empty at the beginning
+var resultsList = []
 
 //tell the button to do somehting when clicked
 HomeButtonGo.click(function(){
     
 
     // 1. capture the chosen user option
-    chosenArea = HomeDropdown.val()
-    console.log("You picked " + chosenArea)
+    var chosenArea = areaDropdown.val()
+    var chosenPrice = priceDropdown.val()
+    console.log("You picked " + chosenArea + " and " + chosenPrice)
+    
+    var filters = 
+    [ 
+        {
+            key: 'Area',
+            value: chosenArea
+        },
+        {
+            // chosenPrice is a number so you don't need a valuee
+            key: 'pricey',
+            value: chosenPrice
+        }
+    ]
     
     // 2. filter+sort venues by chosenArea
-    var resultsList = filterAndSortList(venuesList, "Area", chosenArea);
+    resultsList = filterAndSortList(venuesList, filters);
     console.log(resultsList);
     
     // 3. show the results in the #results section
@@ -41,27 +56,33 @@ HomeButtonGo.click(function(){
         // call the function showDetails()
         showDetails(resultData, detailsInfo)
         // show the details!
-        ResultsSection.hide()
+        resultsSection.hide()
         detailsSection.show()
     })
     
+    //make the title suit what area you choose
+    //if venue result is more than 1 = venues
+    //if its less than 1 it = venue
+    if (resultsList.length > 1) var v = ' venues in '
+    else var v = ' venue in '
+    $('#results h1').html(resultsList.length + v + $('#area option:selected').text())
     
-    // 5. show the section
+    // 5. show the section)
     HomeSection.hide()
-    ResultsSection.show()  
+    resultsSection.show()  
     
 })
 
 //back button 
 ResultsBackButton.click( function(){
-    ResultsSection.hide()
+    resultsSection.hide()
     HomeSection.show()
 })
 
 //details back button
 detailsBackButton.click( function(){
     detailsSection.hide()
-    ResultsSection.show()       
+    resultsSection.show()       
 })
 
 resultsToggleButton.click( function(){
@@ -94,7 +115,7 @@ resultsServicesButton.click( function()
     console.log('clicked resultsServicesButton')
     
     // filter+sort services by chosenArea
-    var resultsList = filterAndSortList(servicesList, "Area", chosenArea);
+    resultsList = filterAndSortList(servicesList, "Area", chosenArea);
     
     console.log(resultsList);
     
