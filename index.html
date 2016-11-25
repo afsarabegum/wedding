@@ -25,11 +25,19 @@
         <section id= "home">
         <img id="logo" src="img/logo.png">
         <h1>I'd like a venue in...</h1>
-        <select>
+        <select id="area">
             <option value="NorthLondon">North London</option>
             <option value="EastLondon" selected>East London</option>
             <option value="SouthLondon">South London</option>
             <option value="WestLondon">West London</option>
+        </select>
+            <select id="price">
+            <option value="0">very cheap</option>
+            <option value="1">cheap</option>
+            <option value="2">decent</option>
+            <option value="3">average</option>
+            <option value="4">expensive</option>
+            <option value="5">very expensive</option>
         </select>
         <button>GO</button>
         <p>Find wedding venues near you!</p>
@@ -41,17 +49,22 @@
             <a class="toggle button">Map</a>
             <a class="services button">Services</a>
         <h1>Venues in North London</h1>
-            <p> 2 venues near you</p>
             <ol>
                 <li>
                 <img src="http://www.meridiangrand.co.uk/images/banner_about.jpg">
                 <h2>Name</h2>
                     <p>About the venue</p>
+                    <p>Capacity</p>
+                    <p>Hire price</p>
+                    <p>Price per person</p>  
                 </li>
                 <li>
-                <img src="https://randomuser.me/api/portraits/women/17.jpg">
+                <img src="http://www.meridiangrand.co.uk/images/banner_about.jpg">
                 <h2>Name</h2>
                     <p>About the venue</p>
+                    <p>Capacity</p>
+                    <p>Hire price</p>
+                    <p>Price per person</p>  
                 </li>
             </ol>
             <div id='map'></div>
@@ -73,7 +86,7 @@
         <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
         <script src="js/firebase.js"></script>
         <script src = "js/geolocate.js"></script>
-        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.js'></script>
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.28.0/mapbox-gl.js'></script>
         <script src="js/mapbox.js"></script>
         <script src="js/filter.js"></script>
         <script src="js/show.js"></script>

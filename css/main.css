@@ -2,7 +2,7 @@ html{
    font-family: 'Asap', sans-serif; 
     background-image: url("../img/weddingvenue.jpeg");
     background-size:cover;
-    background-attachment: fixed;/
+    background-attachment: fixed;
 }
 
 /*hide the results and details by default*/
@@ -69,9 +69,10 @@ button{
 }
 
 .marker.venue {
-    background-color: salmon;
+    background-color: blue;
 }
 
 .marker.service {
-    background-color: peachpuff;
+    background-color: forestgreen;
 }
+
