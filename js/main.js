@@ -15,6 +15,7 @@ var detailsBackButton = $('#details .back')
 
 
 var resultsList = []
+var servicesList = []
 
 //tell the button to do somehting when clicked
 HomeButtonGo.click(function(){
