@@ -1,9 +1,10 @@
 html{
     font-family: 'Merriweather Sans', sans-serif;
-    background-image: url("../img/weddingvenue.jpeg");
+    background-image: url("../img/weddingvenue-min.jpeg");
     background-size:cover;
     background-attachment: fixed;
     font-size: 14px;
+    position: relative;
 }
 
 
