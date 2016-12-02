@@ -45,6 +45,7 @@ function filterAndSortList(completeList, filters)
     // filters must be an array
     if (filters instanceof Array == false) throw 'The filters parameter must be an array'
     
+    
     // 1. assign the whole completeList to filteredAndSortedList
     var filteredAndSortedList = completeList
     

@@ -1,24 +1,24 @@
 // use jQuery to select the HMTL element we're going to manipulate
-var HomeButtonGo = $('#home button')
-var areaDropdown = $('#area')
-var priceDropdown = $('#price')
-var HomeSection = $('#home')
-var resultsSection = $('#results')
-var resultsOL = $('#results ol')
-var resultsToggleButton = $('#results .toggle')
-var resultsServicesButton = $('#results .services')
-var resultsMap = $('#map')
-var ResultsBackButton = $('#results .back')
-var detailsSection = $('#details')
-var detailsInfo = $('#details #info')
-var detailsBackButton = $('#details .back')
+var HomeButtonGo = $('#home button');
+var areaDropdown = $('#area');
+var priceDropdown = $('#price');
+var HomeSection = $('#home');
+var resultsSection = $('#results');
+var resultsOL = $('#results ol');
+var resultsToggleButton = $('#results .toggle');
+var resultsMap = $('#map');
+var ResultsBackButton = $('#results .back');
+var resultsServicesButton = $('#results .services');
+var detailsSection = $('#details');
+var detailsInfo = $('#details #info');
+var detailsBackButton = $('#details .back');
 
 
 var resultsList = []
 var servicesList = []
 
 //tell the button to do somehting when clicked
-HomeButtonGo.click(function(){
+HomeButtonGo.click( function(){
     
 
     // 1. capture the chosen user option
@@ -29,11 +29,12 @@ HomeButtonGo.click(function(){
     var filters = 
     [ 
         {
+            // chosenArea is a string, so we need a value
             key: 'Area',
             value: chosenArea
         },
         {
-            // chosenPrice is a number so you don't need a valuee
+            // chosenPrice is a number so you don't need a value
             key: 'pricey',
             value: chosenPrice
         }
@@ -115,6 +116,7 @@ resultsServicesButton.click( function()
 {
     console.log('clicked resultsServicesButton')
     
+    var chosenArea = areaDropdown.val()
     // filter+sort services by chosenArea
     resultsList = filterAndSortList(servicesList, "Area", chosenArea);
     
