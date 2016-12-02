@@ -11,9 +11,9 @@
         <!-- Place favicon.ico in the root directory -->
 
         <link rel="stylesheet" href="css/normalize.css">
-        <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Amiri" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Karla|NTR" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
         <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.css' rel='stylesheet' />
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
@@ -26,12 +26,14 @@
         <section id= "home">
         <img id="logo" src="img/logo.png">
         <h1>I'd like a venue in...</h1>
+        <p>Pick an area and price to get started</p>
         <select id="area">
             <option value="NorthLondon">North London</option>
             <option value="EastLondon" selected>East London</option>
             <option value="SouthLondon">South London</option>
             <option value="WestLondon">West London</option>
-        </select>
+        </select>   
+            <p>Pick a price!</p>
             <select id="price">
             <option value="0">very cheap</option>
             <option value="1">cheap</option>
@@ -40,9 +42,9 @@
             <option value="4">expensive</option>
             <option value="5">very expensive</option>
         </select>
-        <button>GO</button>
+                
         <p>Find wedding venues near you!</p>
-        <p>Pick an area to get started</p>
+        <button>GO</button>
             </section>
         <!-- SECTION 2       this is the result section -->
         <section id= "results">
@@ -75,9 +77,11 @@
             <a class="back button">Back</a>
             <div id= "info">
             <img src="">
+            <div id= 'capacity'></div>     
             <h2>Michael</h2>
             <p>about</p>
             <a class="contact button">Contact button</a>
+            
             </div>
         </section>
 
