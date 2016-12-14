@@ -28,13 +28,14 @@ function makeDetailsHTML (data)
     <p>I teach people aged 6 to 60+ how to be creative with code.
     </p>
     <a class="contact button">Contact Matteo</a>
+    ="_blank" -----> open link in new tab 
   */
 
   var html = '<h2>' + data.name  + '</h2>' 
   + '<img src="' + data.image + '">' 
   + '<p>' + data.about + '</p>'
   + '<p>' + data.capacity + '</p>'
-  + '<a href ="' +data.website + '" class="Open Website button">Open Website</a>'
+  + '<a href ="' +data.website + '" class="Open Website button" target=”_blank”>Open Website</a>'
   
 
   return html;        
