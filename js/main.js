@@ -15,7 +15,7 @@ var detailsBackButton = $('#details .back');
 
 
 var resultsList = []
-var servicesList = []
+
 
 //tell the button to do somehting when clicked
 HomeButtonGo.click( function(){
@@ -115,6 +115,7 @@ resultsToggleButton.click( function(){
 resultsServicesButton.click( function()
 {
     console.log('clicked resultsServicesButton')
+    var chosenArea = areaDropdown.val()
     var servicesFilters = 
         [
             {
@@ -122,11 +123,9 @@ resultsServicesButton.click( function()
                 value:chosenArea
             }
         ]
-    var chosenArea = areaDropdown.val()
-    // filter+sort services by chosenArea
     
     resultsList = filterAndSortList(servicesList, servicesFilters);
-    console.log(servicesList)
+    console.log(resultsList)
     
     addMarkers(resultsList, false, 'service')
 })
