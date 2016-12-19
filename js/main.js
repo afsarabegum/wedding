@@ -125,7 +125,7 @@ resultsServicesButton.click( function()
         ]
     
     resultsList = filterAndSortList(servicesList, servicesFilters);
-    console.log(servicesList)
+    console.log(resultsList)
     
     addMarkers(resultsList, false, 'service')
 })
