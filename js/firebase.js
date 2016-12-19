@@ -26,5 +26,17 @@ venuesData.on('child_added', function(childData){
     venuesList.push( childData.val()); //add the person to the people list
     
 })
-//we want to grabopnly the "services" part of the database
+//we want to grab only the "services" part of the database
 var servicesData = database.ref('services'); 
+
+//create a list of services
+var servicesList=[];
+
+//load all the children of "venues"
+// keep listneing for new children
+servicesData.on('child_added', function(childData){
+    //run these instructions for each child
+    // console.table( childData.val() );
+    servicesList.push( childData.val());
+    
+})
