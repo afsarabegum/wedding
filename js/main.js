@@ -115,6 +115,7 @@ resultsToggleButton.click( function(){
 resultsServicesButton.click( function()
 {
     console.log('clicked resultsServicesButton')
+    var chosenArea = areaDropdown.val()
     var servicesFilters = 
         [
             {
@@ -122,7 +123,6 @@ resultsServicesButton.click( function()
                 value:chosenArea
             }
         ]
-    var chosenArea = areaDropdown.val()
     // filter+sort services by chosenArea
     
     resultsList = filterAndSortList(servicesList, servicesFilters);
